@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_09_045156) do
+ActiveRecord::Schema.define(version: 2022_09_09_103957) do
 
   create_table "microposts", charset: "utf8mb4", force: :cascade do |t|
     t.string "content"
@@ -18,6 +18,14 @@ ActiveRecord::Schema.define(version: 2022_09_09_045156) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_microposts_on_user_id"
+  end
+
+  create_table "taskposts", charset: "utf8mb4", force: :cascade do |t|
+    t.string "content"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_taskposts_on_user_id"
   end
 
   create_table "tasks", charset: "utf8mb4", force: :cascade do |t|
@@ -36,4 +44,5 @@ ActiveRecord::Schema.define(version: 2022_09_09_045156) do
   end
 
   add_foreign_key "microposts", "users"
+  add_foreign_key "taskposts", "users"
 end
