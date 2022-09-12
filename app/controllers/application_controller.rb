@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
-  
-  include SessionsHelper
   include Pagy::Backend
+  include SessionsHelper
   
   private
   
@@ -10,8 +9,5 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
-  
-  def counts(user)
-    @count_taskposts = user.taskposts.count
-  end
 end
+
