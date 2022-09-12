@@ -50,6 +50,6 @@ test:
 #
 production:
   <<: *default
-  database: tasklist_production
-  username: tasklist
-  password: <%= ENV['TASKLIST_DATABASE_PASSWORD'] %>
+  database: kadai_tasklist_production
+  username: kadai_tasklist
+  password: <%= ENV['KADAI_TASKLIST_DATABASE_PASSWORD'] %>
