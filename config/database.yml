@@ -13,7 +13,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: kadai-tasklist
+  username: kadai-tasklist-124995
   password: dbpass
   socket: /var/run/mysqld/mysqld.sock
 
@@ -50,6 +50,6 @@ test:
 #
 production:
   <<: *default
-  database: kadai_tasklist_production
-  username: kadai_tasklist
+  database: kadai-tasklist-124995_production
+  username: kadai-tasklist-124995
   password: <%= ENV['KADAI_TASKLIST_DATABASE_PASSWORD'] %>
