@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
   include SessionsHelper
+  protect_from_forgery with: :exception
   
   private
   
@@ -10,4 +11,3 @@ class ApplicationController < ActionController::Base
     end
   end
 end
-
