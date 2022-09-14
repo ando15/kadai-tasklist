@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
       return true
     else
       # ログイン失敗
-      redirect_to "tasks#index"
+      return false
     end
   end
 end
