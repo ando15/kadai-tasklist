@@ -1,7 +1,9 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  
   def index
-    @pagy,@tasks = pagy(Task.all)
+    @pagy,@tasks = pagy(Task.all,items: 3)
+    
   end
 
   def show
@@ -10,6 +12,7 @@ class TasksController < ApplicationController
   def new
     @task = Task.new
   end
+  
   def create
     @task = Task.new(task_params)
     
