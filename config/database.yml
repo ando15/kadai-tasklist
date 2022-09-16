@@ -12,7 +12,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: 5
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: tasklist
   password: <%= ENV['TASKLIST_DATABASE_PASSWORD'] %>
   socket: /var/run/mysqld/mysqld.sock
