@@ -1,7 +1,6 @@
 class TasksController < ApplicationController
   before_action :require_user_logged_in
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
-  before_action :correct_user, only: [:update,:destroy]
+  before_action :correct_user, only: [:show, :edit, :update, :destroy]
   
   def index
     @pagy,@tasks = pagy(current_user.tasks,items: 3)
@@ -48,10 +47,6 @@ class TasksController < ApplicationController
   end
 
   private
-
-  def set_task
-    @task = Task.find(params[:id])
-  end
 
   # Strong Parameter
   def task_params
