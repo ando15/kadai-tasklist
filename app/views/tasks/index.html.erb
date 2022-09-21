@@ -3,8 +3,8 @@
     <thead>
       <tr>
         <th>id</th>
-        <th>ステータス</th>
-        <th>タスク</th>
+        <th>誰に</th>
+        <th>どのような</th>
       </tr>
     </thead>
     <tbody>
@@ -22,4 +22,10 @@
   </div>
 <% end %>
 
-<%= link_to '新規タスクの投稿', new_task_path,class: "btn btn-primary" %>
+<div style="text-align: center">
+  <h2>愚痴を投稿して下さい</h2>
+  <div>
+    <%= link_to 'シンプルモード', new_task_path,class: "btn btn-primary" %>
+    <%= link_to '反省モード', new_task_path,class: "btn btn-primary" %>
+  </div>
+</div>

@@ -10,11 +10,11 @@
 #   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
 default: &default
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: tasklist
-  password: <%= ENV['TASKLIST_DATABASE_PASSWORD'] %>
+  username: dbuser
+  password: dbpass
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -49,9 +49,9 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8mb4
   pool: 5
   database: tasklist_production
-  username: tasklist
-  password: <%= ENV['TASKLIST_DATABASE_PASSWORD'] %>
+  username: dbuser
+  password: dbpass
